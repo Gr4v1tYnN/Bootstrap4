@@ -87,57 +87,57 @@
                 </div>
                 <div class="modal-body">
                     <form>
-                            <div class="form-group row">
-                                <label for="numbofguests" class="col-sm-2 col-form-label">Number of Guests</label>
-                                <div class="col">
-                                    <input type="radio" name="number" value="1" id="one"/>
-                                    <label for="one">1</label>
-                                    <input type="radio" name="number" value="2" id="two"/>
-                                    <label for="two">2</label>
-                                    <input type="radio" name="number" value="3" id="three"/>
-                                    <label for="three">3</label>
-                                    <input type="radio" name="number" value="4" id="four"/>
-                                    <label for="four">4</label>
-                                    <input type="radio" name="number" value="5" id="five"/>
-                                    <label for="five">5</label>
-                                    <input type="radio" name="number" value="6" id="six"/>
-                                    <label for="six">6</label>
-                                </div>    
-                            </div>
-                            <div class="form-group row">
-                                <label for="section" class="col-sm-2 col-form-label">Section</label>
-                                <div class="col">
-                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-success active">
-                                            <input type="radio" name="options" id="option1" autocomplete="off" checked> Non-Smoking
-                                        </label>
-                                        <label class="btn btn-danger">
-                                            <input type="radio" name="options" id="option2" autocomplete="off"> Smoking
-                                        </label>
-                                    </div>
+                        <div class="form-group row">
+                            <label for="numbofguests" class="col-sm-2 col-form-label">Number of Guests</label>
+                            <div class="col">
+                                <input type="radio" name="number" value="1" id="one"/>
+                                <label for="one">1</label>
+                                <input type="radio" name="number" value="2" id="two"/>
+                                <label for="two">2</label>
+                                <input type="radio" name="number" value="3" id="three"/>
+                                <label for="three">3</label>
+                                <input type="radio" name="number" value="4" id="four"/>
+                                <label for="four">4</label>
+                                <input type="radio" name="number" value="5" id="five"/>
+                                <label for="five">5</label>
+                                <input type="radio" name="number" value="6" id="six"/>
+                                <label for="six">6</label>
+                            </div>    
+                        </div>
+                        <div class="form-group row">
+                            <label for="section" class="col-sm-2 col-form-label">Section</label>
+                            <div class="col">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn btn-success active">
+                                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Non-Smoking
+                                    </label>
+                                    <label class="btn btn-danger">
+                                        <input type="radio" name="options" id="option2" autocomplete="off"> Smoking
+                                    </label>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="dateandtime" class="col-sm-2 col-form-label">Date and Time</label>
-                                <div class="col col-sm-4">
-                                    <input type="text" class="form-control" id="date" name="date" placeholder="Date">
-                                </div>
-                                <div class="col col-sm-4">
-                                    <input type="text" class="form-control" id="time" name="time" placeholder="Time">
-                                </div> 
+                        </div>
+                        <div class="form-group row">
+                            <label for="dateandtime" class="col-sm-2 col-form-label">Date and Time</label>
+                            <div class="col col-sm-4">
+                                <input type="text" class="form-control" id="date" name="date" placeholder="Date">
                             </div>
-                            <div class="form-group row">
-                                <div class="col offset-sm-2">
-                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-primary btn-sm">Reserve</button>    
-                                </div>             
-                            </div>
+                            <div class="col col-sm-4">
+                                <input type="text" class="form-control" id="time" name="time" placeholder="Time">
+                            </div> 
+                        </div>
+                        <div class="form-group row">
+                            <div class="col offset-sm-2">
+                                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary btn-sm">Reserve</button>    
+                            </div>             
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    
 
     <header class="jumbotron">
         <div class="container">
@@ -196,7 +196,15 @@
                         </a>
                         <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                             <span class="carousel-control-next-icon"></span>
-                        </a>
+                        </a>   
+                    </div>
+                    <div class="btn-group" id="carouselButtons">
+                        <button class="button btn-danger btn-sm" id="carousel-pause">
+                            <span class="fa fa-pause"></span>
+                        </button>
+                        <button class="button btn-danger btn-sm" id="carousel-play">
+                            <span class="fa fa-play"></span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -294,6 +302,17 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#mycarousel').carousel({ interval: 2000 });
+            $('#carousel-pause').click(function() {
+                $('#mycarousel').carousel('pause');
+            });
+            $('#carousel-play').click(function() {
+                $('#mycarousel').carousel('cycle');
+            });
+        });
+    </script>
 </body>
 
 </html>
